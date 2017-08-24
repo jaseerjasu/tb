@@ -65,7 +65,7 @@ SDK_HOST это основная точка входа (endpoint) для все�
   		super.onCreate(savedInstanceState);
   
    		// Инициализация AviasalesSDK. 
-		AviasalesSDK.getInstance().init(this, new IdentificationData(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN));
+		AviasalesSDK.getInstance().init(this, new SdkConfig(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN, SDK_HOST));
   		setContentView(R.layout.activity_main);
      
   		initFragment();
