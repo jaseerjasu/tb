@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile 'ru.aviasales:aviasalesSdk:2.1.7-sdk'
+    compile 'ru.aviasales:aviasalesSdk:2.1.9-sdk'
 }
 ```
 
@@ -23,10 +23,12 @@ dependencies {
 Before usage of sdk API it should be initialized 
 
 ```java
- AviasalesSDK.getInstance().init(this, new IdentificationData(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN));
+ AviasalesSDK.getInstance().init(this, new SdkConfig(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN, SDK_HOST));
 ```
 
 Change TRAVEL_PAYOUTS_MARKER and TRAVEL_PAYOUTS_TOKEN to your marker and token params. You can get them at [Travelpayouts.com](https://www.travelpayouts.com/developers/api):
+
+`SDK_HOST` is a main endpoint of Aviasales SDK. You can set `www.travel-api.pw`as your default endpoint, but we strongly recommend to change it to your [WhiteLabel host](https://support.travelpayouts.com/hc/en-us/categories/115000474487). 
 
 ### Specify permissions
 
@@ -132,7 +134,7 @@ For more information see the [demo project](https://github.com/KosyanMedia/Avias
 
 In the app you can add additional affiliate marker. This is useful, for example, to monitor the actions of different users. To do this, initialize AviasalesSDK with IdentificationData constructor :
 ```java
-		AviasalesSDK.getInstance().init(getApplicationContext(), new IdentificationData(TRAVEL_PAYOUTS_MARKER, YOUR_ADDITIONAL_MARKER, TRAVEL_PAYOUTS_TOKEN));
+AviasalesSDK.getInstance().init(getApplicationContext(), new SdkConfig(TRAVEL_PAYOUTS_MARKER, YOUR_ADDITIONAL_MARKER, SDK_HOST, TRAVEL_PAYOUTS_TOKEN));
 ```
 ## Javadoc
 
