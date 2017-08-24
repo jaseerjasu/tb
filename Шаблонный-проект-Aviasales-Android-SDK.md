@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'ru.aviasales.template:aviasalesSdkTemplate:2.1.8'
+    compile 'ru.aviasales.template:aviasalesSdkTemplate:2.1.9'
 }
 ```
 
@@ -21,10 +21,12 @@ dependencies {
 Перед тем как использовать SDK API или шаблонный проект Aviasales Template, необходимо проинициализировать AviasalesSDK:
 
 ```java
-  		AviasalesSDK.getInstance().init(this, new IdentificationData(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN)); 
+  	AviasalesSDK.getInstance().init(this, new SdkConfig(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN, SDK_HOST)); 
 ```
 
 Замените `TRAVEL_PAYOUTS_MARKER` и `TRAVEL_PAYOUTS_TOKEN` на ваш партнерский маркер и токен. Чтобы получить их, перейдите в раздел "[Разработчикам](https://www.travelpayouts.com/developers/api)" личного кабинета партнерской программы.
+
+SDK_HOST это основная точка входа (endpoint) для всех запросов Aviasales Sdk. Стандартно её можно выставить какwww.travel-api.pw, но мы настоятельно рекомендуем заменить её на свой WhiteLabel host.
 
 ### Установка разрешений
 
@@ -161,7 +163,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    compile 'ru.aviasales.template:appodeallib:2.1.8'
+    compile 'ru.aviasales.template:appodeallib:2.1.9'
 }
 ```
 
