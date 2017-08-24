@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    compile 'ru.aviasales:aviasalesSdk:2.1.7-sdk'
+    compile 'ru.aviasales:aviasalesSdk:2.1.9-sdk'
 }
 ```
 
@@ -23,10 +23,12 @@ dependencies {
 Перед тем как использовать SDK API его необходимо проинициализировать: 
 
 ```java
-    AviasalesSDK.getInstance().init(this, new IdentificationData(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN));
+    AviasalesSDK.getInstance().init(this, new SdkConfig(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN, SDK_HOST));
 
 ```
 Замените `TRAVEL_PAYOUTS_MARKER` и `TRAVEL_PAYOUTS_TOKEN` на ваш партнерский маркер и токен. Чтобы получить их, перейдите в раздел "[Разработчикам](https://www.travelpayouts.com/developers/api)" личного кабинета партнерской программы.
+
+`SDK_HOST` это основная точка входа (endpoint) для всех запросов Aviasales Sdk. Стандартно её можно выставить как`www.travel-api.pw`, но мы настоятельно рекомендуем заменить её на свой [WhiteLabel host](https://support.travelpayouts.com/hc/en-us/categories/115000474487). 
 
 ### Установка разрешений
 
@@ -134,7 +136,7 @@ Aviasales SDK поддерживает сложный поиск. Можно з�
 В приложении можно использовать дополнительный маркер. Это может пригодиться для отслеживания действий разных пользователей. Для этого необходимо при старте приложения инициализировать AviasalesSDK со следующим конструктором `IdentificationData`: 
 
 ```java
-	AviasalesSDK.getInstance().init(getApplicationContext(), new IdentificationData(TRAVEL_PAYOUTS_MARKER, YOUR_ADDITIONAL_MARKER, TRAVEL_PAYOUTS_TOKEN));
+	AviasalesSDK.getInstance().init(getApplicationContext(), new SdkConfig(TRAVEL_PAYOUTS_MARKER, YOUR_ADDITIONAL_MARKER, SDK_HOST, TRAVEL_PAYOUTS_TOKEN));
 ```
 
 ## Javadoc
