@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'ru.aviasales.template:aviasalesSdkTemplate:2.1.9'
+    compile 'ru.aviasales.template:aviasalesSdkTemplate:2.1.10'
 }
 ```
 
@@ -163,7 +163,7 @@ SDK_HOST это основная точка входа (endpoint) для все�
 
 ```gradle
 dependencies {
-    compile 'ru.aviasales.template:appodeallib:2.1.9'
+    compile 'ru.aviasales.template:appodeallib:2.1.10'
 }
 ```
 
